@@ -1,13 +1,19 @@
-import { Component, useState } from "react";
+import { useState } from "react";
 import Colors from "../Colors";
 import Pixel from "./Pixel";
 
-const Canvas = () => {
+const Canvas = (props) => {
 	const [matrix, setMatrix] = useState(
 		Array(30)
 			.fill()
 			.map(() => Array(30).fill(0))
 	);
+
+	const changeColor = (rowIndex, colIndex) => {
+		const newMatrix = JSON.parse(JSON.stringify(matrix)); // clone the matrix array for immutability
+		newMatrix[rowIndex][colIndex] = props.currentColor; // update the specific location given by rowIndex and colIndex and we set it to the new color
+		setMatrix(newMatrix); // set the new state
+	};
 
 	/**
 	 *  iterate every row, and for each row iterate every column,
@@ -27,6 +33,7 @@ const Canvas = () => {
 						<Pixel
 							key={`${rowIndex}-${colIndex}`}
 							background={Colors[matrix[rowIndex][colIndex]]}
+							onClick={(e) => changeColor(rowIndex, colIndex)}
 						/>
 					);
 				})
