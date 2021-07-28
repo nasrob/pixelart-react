@@ -1,10 +1,10 @@
 import "./App.css";
-import Pixel from "./components/Pixel";
+import Canvas from "./components/Canvas";
 
 function App() {
 	return (
 		<div className="App">
-			<Pixel />
+			<Canvas />
 		</div>
 	);
 }

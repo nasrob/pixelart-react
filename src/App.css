@@ -1,3 +1,24 @@
+.App {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pixel {
+  width: 30px;
+  height: 30px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
 .white {
   background-color: white;
 }
@@ -12,11 +33,4 @@
 
 .darkblue {
   background-color: rgb(33, 150, 243);
-}
-
-.pixel {
-  width: 30px;
-  height: 30px;
-  border: 1px solid lightgray;
-  box-sizing: border-box;
 }
